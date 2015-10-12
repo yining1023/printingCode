@@ -6,12 +6,12 @@ var r = new Rune({
 });
 
 //background
-r.rect(0, 0, r.width, r.height).fill(0).stroke(false);
+r.rect(0, 0, r.width, r.height).fill(34, 42, 73).stroke(false);
 
 function drawUmbrella(){
 var umbrella = r.path(200, 300)
-  .fill(255)
-  .stroke(255)
+  .fill(255, 0.5)
+  .stroke(false)
 //draw the ellipse
   .curveTo(30, -200, 370, -200, 400, 0)
   .closePath()
@@ -41,11 +41,11 @@ function drawOneRainFace(posX){
   }
   r.circle(posX + Rune.random(-5,5), 300+25+20*(length-1) + 3 + Rune.random(-3,3), Rune.random(7,15))
   .stroke(false)
-  .fill(Rune.random(50, 150)) 
+  .fill(255, Rune.random(0.8))
 
   r.circle(posX + Rune.random(-5,5), 300+25+20*(length-1) + 3 + Rune.random(-3,3), Rune.random(7,15))
   .stroke(false)
-  .fill(Rune.random(150, 200))
+  .fill(255, Rune.random(0.8))
 
   r.circle(posX, 300+25+20*(length-1) + 3, Rune.random(4,10))
   .stroke(255)
@@ -53,19 +53,19 @@ function drawOneRainFace(posX){
 }
 
 function drawcup(){
-  for(var i=0; i<25; i++){
+  for(var i=0; i<20; i+=0.1){
     var cup = r.path(200, 800 + 10*i)
 //draw many cups with differet color to compose the fading color cup
     .curveTo(30, 280, 370, 280, 400, 0)
-    .fill(225-i*10)
+    .fill(34+100-i*5, 42+100-i*5, 73+100-i*5)
     .stroke(false)
     .closePath();
   }
 
 //draw cupoutline
   var cupOutline = r.path(0, 800)
-  .fill(0)
-  .stroke(0)
+  .fill(34, 42, 73)
+  .stroke(34, 42, 73)
   .lineTo(0, 0)
   .lineTo(200, 0)
   .curveTo(230, 280, 570, 280, 600, 0)
@@ -75,15 +75,15 @@ function drawcup(){
   .closePath();
 //draw the handle
 var cupBigHandle = r.path(200, 800)
-  .fill(190)
-  .stroke(190)
+  .fill(255, 0.3)
+  .stroke(false)
   .moveTo(397, 20)
   .curveTo(455, 0, 455, 100, 365, 110)
 var cupSmallHandle = r.path(200, 800)
-  .fill(0)
-  .stroke(0)
+  .fill(34, 42, 73)
+  .stroke(34, 42, 73)
   .moveTo(395, 40)
-  .fill(0)
+  .fill(34, 42, 73)
   .curveTo(435, 0, 435, 100, 373, 90)
   .lineTo(395, 40)
 }
