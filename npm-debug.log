@@ -1,0 +1,29 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'rune,font,js' ]
+2 info using npm@2.9.1
+3 info using node@v0.12.3
+4 verbose install initial load of /Users/shiyining/Desktop/printingCode/printing-code-projects-master/package.json
+5 verbose readDependencies loading dependencies from /Users/shiyining/Desktop/printingCode/printing-code-projects-master/package.json
+6 silly cache add args [ 'rune,font,js', null ]
+7 verbose cache add spec rune,font,js
+8 silly cache add parsed spec { raw: 'rune,font,js',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: 'rune,font,js',
+8 silly cache add   spec: '/Users/shiyining/Desktop/printingCode/printing-code-projects-master/rune,font,js',
+8 silly cache add   type: 'local' }
+9 error addLocal Could not install /Users/shiyining/Desktop/printingCode/printing-code-projects-master/rune,font,js
+10 verbose stack Error: ENOENT, open '/Users/shiyining/Desktop/printingCode/printing-code-projects-master/rune,font,js'
+10 verbose stack     at Error (native)
+11 verbose cwd /Users/shiyining/Desktop/printingCode/printing-code-projects-master
+12 error Darwin 14.5.0
+13 error argv "node" "/usr/local/bin/npm" "install" "rune,font,js"
+14 error node v0.12.3
+15 error npm  v2.9.1
+16 error path /Users/shiyining/Desktop/printingCode/printing-code-projects-master/rune,font,js
+17 error code ENOENT
+18 error errno -2
+19 error enoent ENOENT, open '/Users/shiyining/Desktop/printingCode/printing-code-projects-master/rune,font,js'
+19 error enoent This is most likely not a problem with npm itself
+19 error enoent and is related to npm not being able to find a file.
+20 verbose exit [ -2, true ]
