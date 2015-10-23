@@ -1,9 +1,11 @@
 var r = new Rune({
   container: "#canvas",
-  width: 1800,
+  width: 1200,
   height: 800,
   // debug: true
 });
+
+r.rect(0, 0, r.width, r.height).fill("#12A5F4").stroke(false);
 
 var f = new Rune.Font("Roboto-Regular.ttf");
 
@@ -42,6 +44,7 @@ f.load(function(err) {
 
   var allLetters = Object.keys(polysCount);
 
+  // newLine("ABCDE", 1);
   newLine("ABCDE", 1);
 
 });
@@ -84,7 +87,7 @@ function newLine(text, lineNumber){
         y: poly.vars.y + vec.y
       };
       r.line(circlePoints[j].x, circlePoints[j].y, letterPoints.x, letterPoints.y)
-        .stroke(0,0,0,0.3);
+        .stroke(255,0.6);
     }
 
   }
