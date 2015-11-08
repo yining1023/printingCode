@@ -1,0 +1,25 @@
+r.polygon(centerX, centerY + 10)
+      .rotate(angel, 300, 300)
+      .fill("#ff8a8e")
+      .stroke(false)
+      .lineTo(b, -b+2*wid)
+      .lineTo(b, -b+2*wid + 10)
+      .lineTo(wid+25, -a+wid/2+20)
+      .lineTo(wid+25, -a+wid/2+10);
+      // .lineTo(b, -b+2*wid-2.5)
+      // .lineTo(b, -b+2*wid + 10)
+      // .lineTo(wid+25, -a+wid/2+20)
+      // .lineTo(wid+25, -a+wid/2+10);
+
+    r.polygon(centerX-25, centerY+wid+30 + longer/2)
+      .rotate(angel, 300, 300)
+      .fill("#ff8a8e")
+      .stroke(false)
+      // .lineTo(b, -b+2*wid)
+      // .lineTo(b, -b+2*wid + 10)
+      // .lineTo(wid+25, -a+wid/2+20)
+      // .lineTo(wid+25, -a+wid/2 + 7.5);
+      .lineTo(b, -b+2*wid)
+      .lineTo(b, -b+2*wid + 10)
+      .lineTo(wid+25, -a+wid/2+20)
+      .lineTo(wid+25, -a+wid/2 + 7.5);
