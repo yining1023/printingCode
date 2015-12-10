@@ -29,6 +29,8 @@ var grid = r.grid({
 });
 
 var fullMessage;
+var color1 = new Rune.Color(0, 174, 239);
+var color = new Rune.Color(244, 154, 193);
 
 $.getJSON('fullMessage.json')
    .done(function (data) {
@@ -37,25 +39,112 @@ $.getJSON('fullMessage.json')
        console.log(fullMessage[2].text.length);
        // console.log(fullMessage.length);
        
-    for(var i = 0; i < 101; i++)
+    for(var j = 1; j < 101; j++)
     {
-      for(var j = 0; j < 101; j++){
-        var name = fullMessage[i*100+j].author;
-        var text = fullMessage[i*100+j].text;
-        var text = fullMessage[i*100+j].timestamp;
+      for(var i = 1; i < 101; i++){
+        var name = fullMessage[j*100+i].author;
+        var text = fullMessage[j*100+i].text;
+        var time = fullMessage[j*100+i].timestamp;
+        // var tree2 = "";
+        // switch(name){
+        //   case "Yining  Shi":
+        //     var tree2 = r.circle(grid.vars.moduleWidth/2, grid.vars.moduleHeight/2, 4)
+        //     .fill(color)
+        //     .stroke(false);
+        //     break;
+
+        //   case "Sagar Mohite":           
+        //     var tree2 = r.triangle(grid.vars.moduleWidth/2, grid.vars.moduleHeight/2 - 4, grid.vars.moduleWidth/2 - Math.sqrt(2)/2*(grid.vars.moduleWidth/2), grid.vars.moduleHeight/2 + 3, grid.vars.moduleWidth/2 + Math.sqrt(2)/2*(grid.vars.moduleWidth/2), grid.vars.moduleHeight/2 + 3)
+        //     .fill(color1)
+        //     .stroke(false);
+        //     break;
+        // }
+
 
         if(name == "Yining  Shi"){
-          var color = new Rune.Color(244, 154, 193);
+          if(text.indexOf("I miss you") > -1 || text.indexOf("i miss you") > -1 || text.indexOf("i missed you") > -1 || text.indexOf("I missed you") > -1){
+            var color = new Rune.Color("#ff0000");
+            //red color
+            // console.log(name);
+            // console.log(text);
+            // console.log(time);
+          }
+          else if(text.indexOf("me too") > -1){
+            var color = new Rune.Color("#af3aeb");
+            // console.log(text);
+          }
+          else if(text.indexOf("haha") > -1 || text.indexOf("Haha") > -1){
+            var color = new Rune.Color("#62C462");
+            // console.log(text);
+          }
+          else if(text.indexOf("floor") > -1 || text.indexOf("Floor") > -1){
+            var color = new Rune.Color("#fe9001");
+            // console.log(text);
+          }
+          else if(text.indexOf("data") > -1 || text.indexOf("Data") > -1){
+            var color = new Rune.Color("#1F3A93");
+            // console.log(text);
+            console.log(name);
+            console.log(text);
+            console.log(time);
+            console.log(i);
+            console.log(j);
+          }
+          else{
+            var color = new Rune.Color(244, 154, 193);
+            // console.log(text);
+          }
+          var tree2 = r.circle(grid.vars.moduleWidth/2, grid.vars.moduleHeight/2, 4)
+          .fill(color)
+          .stroke(false);
         }
-        else if(name == "Sagar Mohite"){
-          var color = new Rune.Color(0, 174, 239);
-        }
-       
-        var tree2 = r.circle(grid.vars.moduleWidth/2, grid.vars.moduleHeight/2, 4)
-        .fill(color)
-        .stroke(false);
 
-        grid.add(tree2, i, j);
+        else if(name == "Sagar Mohite"){
+          if(text.indexOf("I miss you") > -1 || text.indexOf("i miss you") > -1 || text.indexOf("i missed you") > -1 || text.indexOf("I missed you") > -1){
+            var color2 = new Rune.Color("#ff0000");
+            //red color
+            // console.log(name);
+            // console.log(text);
+            // console.log(time);
+            // console.log(i);
+            // console.log(j);
+          }
+          else if(text.indexOf("me too") > -1 || text.indexOf("Me too") > -1 || text.indexOf("I miss you too") > -1 || text.indexOf("i miss you too") > -1){
+            var color2 = new Rune.Color("#af3aeb");
+            //purple
+            // console.log(text);
+          }
+          else if(text.indexOf("haha") > -1 || text.indexOf("Haha") > -1){
+            var color2 = new Rune.Color("#62C462");
+            // console.log(text);
+            //green
+          }
+          else if(text.indexOf("floor") > -1 || text.indexOf("Floor") > -1){
+            var color2 = new Rune.Color("#fe9001");
+            // console.log(text);
+            //orange
+          }
+          else if(text.indexOf("data") > -1 || text.indexOf("Data") > -1){
+            var color2 = new Rune.Color("#1F3A93");
+            // console.log(text);
+            console.log(name);
+            console.log(text);
+            console.log(time);
+            console.log(i);
+            console.log(j);
+          }
+          else{
+            var color2 = new Rune.Color("#5BC0DE");
+            //light blue
+          }
+          var tree2 = r.triangle(grid.vars.moduleWidth/2, grid.vars.moduleHeight/2 - 4, grid.vars.moduleWidth/2 - Math.sqrt(2)/2*(grid.vars.moduleWidth/2), grid.vars.moduleHeight/2 + 3, grid.vars.moduleWidth/2 + Math.sqrt(2)/2*(grid.vars.moduleWidth/2), grid.vars.moduleHeight/2 + 3)
+          .fill(color2)
+          .stroke(false);
+        }
+        // if(tree2!==""){
+          grid.add(tree2, i, j); 
+        // }
+
       }
     }
     r.draw();
